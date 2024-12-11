@@ -1,11 +1,26 @@
 <MainMenu>:
-    FloatLayout:
+    BoxLayout:
+        orientation: "vertical"
         Label:
             id: WelcomeLabel
-            text: "Welcome on LoRe, the learning system for best students"
-            size: 250, None           # Largeur fixe de 300px, hauteur auto
+            text: "Welcome on LoRe, the learning system for bests of bests"
+            size: 300, 475           # Largeur fixe de 300px, hauteur auto
             size_hint: 0.8, None
             text_size: self.width+0, None 
             wrap: True
-            size: 300, 75          # Taille du label (200 px par 50 px)
-            pos_hint: {"center_x": 0.40, "top": 1}
+            pos_hint: {"center_x": 0.50, "top": 1}
+
+        Button:
+            id: TranslateButton
+            text: "passer en francais"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.TranslateButtonFunction()
+        Button:
+            id: GoToMainMenuButton
+            text: "go to the main menu"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.GoToMainMenuFunction()
