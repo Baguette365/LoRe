@@ -1,4 +1,4 @@
-from src.interface import app
+from src import app
 
 lore=app.LoRe()
 lore.run()

@@ -1,0 +1,118 @@
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            id: WelcomeLabel
+            text: "Welcome on LoRe, the learning system for bests of bests"
+            size: 300, 475
+            size_hint: 0.8, None
+            text_size: self.width+0, None 
+            wrap: True
+            pos_hint: {"center_x": 0.50, "top": 1}
+
+        Button:
+            id: TranslateButton
+            text: "passer en francais"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.TranslateButtonFunction()
+        Button:
+            id: GoToMainMenuButton
+            text: "go to the main menu"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.manager.current = 'MenuScreen'
+
+<MenuScreen>
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            id: MainMenuLabel
+            size_hint: 0.8, None
+            text: "Main Menu"
+            size: 300, 150
+            pos_hint: {"center_x": 0.50, "top": 1}
+        Button:
+            id: TranslateButton
+            text: "passer en francais"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.TranslateButtonFunction()
+        Button:
+            id: GoToBlankSheetButton
+            text: "BlankSheet"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.manager.current = 'BlankSheet'
+        Button:
+            id: GoToOthersButton
+            text: "Others"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.manager.current = 'Others'
+        Button:
+            id: GoToRevisionsSheetsButton
+            text: "Revision Sheets"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.manager.current = "RevisionSheets"
+
+<BlankSheet>
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            id: TutorialLabel
+            size_hint: 1, None
+            text: "https://www.youtube.com/watch?v=C9oemlJ4hu8"
+            pos_hint: {"center_x": 0.50, "top": 1}
+
+        TextInput:
+            id: FrontSheet
+            size_hint: 1, None
+            size: 1200, 450
+
+        Button:
+            id: ValidButton
+            text: "GoToBack"
+            size_hint: 1, 1
+            bold: True
+            background_color: "0068ff"
+            on_press: root.GoBackSide()
+
+<BackBlankSheet>
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            id: FrontLabel
+            text: ""
+            size: 300, 400
+            size_hint: 0.8, 1
+            text_size: self.width+0, None 
+            wrap: True
+
+        TextInput:
+            id: FrontSheet
+            size: 300, 300
+
+        Button:
+            id: ShowFrontButton
+            text: "Verify"
+            size_hint: 1, 0.2
+            bold: True
+            background_color: "0068ff"
+            on_press: root.Verify()
+
+
+
+
+
+
